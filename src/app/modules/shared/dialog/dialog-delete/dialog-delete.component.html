@@ -1,0 +1,14 @@
+<div class="delete-content">
+    <h1>Tem certeza que deseja excluir?</h1>
+    <div>
+        <app-shared-button
+            title="Deletar"
+            (click)="closeDialog(true)"
+        ></app-shared-button>
+        <app-shared-button
+            title="Cancelar"
+            [outline]="true"
+            (click)="closeDialog(false)"
+        ></app-shared-button>
+    </div>
+</div>

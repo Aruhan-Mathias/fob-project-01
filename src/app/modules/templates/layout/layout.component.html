@@ -1,0 +1,44 @@
+<mat-drawer-container class="home-container" autosize>
+
+  <mat-drawer #drawer [opened]="true" mode="side">
+
+    <div class="sidenav">
+
+      <button mat-button routerLink="/home">
+        <span class="material-symbols-outlined">
+          cottage
+        </span>
+        <!-- <span class="ml-3">Home</span> -->
+      </button>
+
+      <button mat-button routerLink="/candidates">
+        <span class="material-symbols-outlined">
+          groups
+        </span>
+        <!-- <span>Colaboradores</span> -->
+      </button>
+
+    </div>
+
+  </mat-drawer>
+
+  <mat-drawer-content>
+
+    <!-- TODO: change to new header-component -->
+    <section class="header-container">
+
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <span class="material-symbols-outlined">
+          menu
+        </span>
+      </button>
+
+      <img src="../../../../assets/img/logotipo-fire-of-brazil.png" alt="Logotipo Fire of Brazil Productions">
+
+    </section>
+
+    <router-outlet></router-outlet>
+
+  </mat-drawer-content>
+
+</mat-drawer-container>

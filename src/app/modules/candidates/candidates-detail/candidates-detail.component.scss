@@ -1,0 +1,126 @@
+.candidates-details-container {
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  padding: 50px 0;
+
+  svg {
+
+    cursor: pointer;
+
+  }
+
+  button {
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+  }
+
+  .candidates-details-content-top {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    div {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      img {
+
+        border-radius: 100%;
+        box-shadow: 12px 14px 26px rgb(68 73 83 / 26%);
+        background-color: white;
+        height: -moz-fit-content;
+        height: fit-content;
+        width: 300px;
+
+      }
+
+    }
+
+  }
+
+  section {
+
+    .card-container {
+
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 2rem;
+      max-width: 100%;
+      gap: 10px;
+
+      .card {
+
+        background-color: rgb(255 255 255);
+        border-radius: 1rem;
+        box-shadow: -1rem 0 3rem 0rem #5252524a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        min-width: 300px;
+        min-height: 350px;
+        padding: 1.5rem;
+        transition: 300ms ease-in-out;
+
+        &:hover:not(:last-child) {
+
+          transform: rotate(-4deg);
+
+          & ~ .card {
+            z-index: 1;
+            translate: 60px
+          }
+
+        }
+
+        & + .card {
+
+          margin-left: -10%;
+
+        }
+
+        img {
+
+          max-width: 300px;
+
+        }
+
+      }
+
+    }
+
+    .video-container {
+
+      margin-top: 2rem;
+
+      button {
+
+        float: right;
+
+      }
+
+      video {
+
+        max-height: 540px;
+        width: 100%;
+
+      }
+
+    }
+
+  }
+
+}

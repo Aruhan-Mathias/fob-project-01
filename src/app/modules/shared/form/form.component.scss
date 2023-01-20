@@ -1,0 +1,79 @@
+.form-content {
+
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 625px;
+
+  mat-form-field {
+
+    margin-right: 30px;
+
+    &.name {
+
+      width: 75%;
+
+    }
+
+    &.age {
+
+      width: calc(25% - 60px);
+
+    }
+
+    &.contactNumber {
+
+      width: calc(40% - 30px);
+
+    }
+
+    &.weight {
+
+      width: 145px;
+
+    }
+
+    &.height {
+
+      width: 170px;
+
+    }
+
+    &.w-50 {
+
+      width: calc(50% - 30px);
+
+    }
+
+  }
+
+  .mat-checkboxes {
+
+    margin: 10px !important;
+
+  }
+
+  .btn-next-content {
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px 20px 0;
+    width: 100%;
+
+    .disabled {
+
+      cursor: not-allowed;
+      pointer-events: none;
+
+    }
+
+  }
+
+}
+
+.w-full {
+
+  width: 100% !important;
+
+}

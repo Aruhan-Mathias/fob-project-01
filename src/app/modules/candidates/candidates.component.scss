@@ -1,0 +1,204 @@
+.candidates-container {
+
+  padding: 15px;
+
+  .candidates-content {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .candidates-card {
+
+      background-color: #efefef;
+      border-radius: 6px;
+      margin: 30px;
+      min-height: 315px;
+      max-height: fit-content;
+      overflow: hidden;
+      padding: 20px 20px;
+      width: 190px;
+
+      .delete-content {
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        svg {
+
+          background-color: rgba(193, 57, 56, 1);
+          cursor: pointer;
+          position: absolute;
+          margin: 4px -8px 0 0;
+          border-radius: 0 0 30px 30px;
+          padding: 10px 5px;
+          z-index: 1;
+
+          path {
+            color: FFFF;
+          }
+
+        }
+
+      }
+
+      .visible-to-client {
+
+        border-radius: 0 8px 8px 0;
+        background-color: #5e5e5f85;
+        color: #FFFF;
+        padding: 3px 10px;
+        position: absolute;
+        margin: 20px 0 0 -20px;
+        font-size: .6rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        z-index: 1;
+
+        span {
+
+          font-size: .7rem;
+          font-weight: normal;
+
+        }
+
+
+      }
+
+      .candidates-card-header {
+
+        background: linear-gradient(360deg, rgba(222, 82, 38, 0.85) -30%, rgb(255, 222, 109) 70%, rgb(250, 210, 41) 103%);
+        transform: rotate(-15deg);
+        box-sizing: border-box;
+        position: relative;
+        left: -45px;
+        top: -45px;
+        height: 140px;
+        width: 265px;
+
+      }
+
+      .candidates-card-profile {
+
+        display: flex;
+        justify-content: center;
+        height: 20px;
+
+        img, span {
+
+          background-color: white;
+          border-radius: 50%;
+          box-shadow: 3px 3px 20px rgb(0 0 0 / 50%);
+          border: 2px solid rgba(255, 255, 255, 1);
+          color: #80858f48;
+          position: relative;
+          font-size: 80px;
+          top: -85px;
+          object-fit: cover;
+          height: 80px;
+          width: 80px;
+
+        }
+
+      }
+
+      .candidates-card-description {
+
+        p {
+
+          color: #80858F;
+          margin-top: 10px;
+          font-size: .75rem;
+          font-weight: 500;
+
+          &:first-child {
+
+            font-size: 1rem;
+            color: #444953;
+            text-align: center;
+
+          }
+
+          &.passport {
+
+            color: white;
+            border-radius: 10px;
+            padding: 3px 10px;
+            font-size: .7rem;
+            width: fit-content;
+
+            &.valid {
+
+              background: #FA9525;
+
+            }
+
+            &.not-valid {
+
+              background: #E73D0A;
+
+            }
+
+          }
+
+        }
+
+        .candidates-card-networks {
+
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          margin-top: 20px;
+
+        }
+
+        .btn-details {
+
+          border-radius: 15px;
+          border: 1px solid #5c5c5c63;
+          color: #5c5c5c;
+          cursor: pointer;
+          text-transform: capitalize;
+          font-weight: 400;
+          padding: 7px 0;
+          margin: 5px 0;
+          width: 100%;
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+}
+
+
+/* Medias */
+@media(max-width: 900px) {
+
+  .candidates-container {
+
+    .candidates-content {
+
+      .candidates-card {
+
+        width: 100%;
+
+        .candidates-card-header {
+
+          top: -90px;
+          left: -55px;
+          width: 700px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

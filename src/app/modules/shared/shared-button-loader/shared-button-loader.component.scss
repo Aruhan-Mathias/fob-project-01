@@ -1,0 +1,39 @@
+button {
+
+  color: #FFFF;
+  cursor: pointer;
+  background-color: #f87816;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  // padding: 10px 20px;
+  min-width: 150px;
+
+  &.loading,
+  &.disabled {
+
+    opacity: .6;
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #FFFF !important;
+
+  }
+
+  &.outline {
+
+    background-color: transparent;
+    border: 1px solid #707070;
+    color: #707070;
+
+  }
+
+  .mat-spinner-content {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+}

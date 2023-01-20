@@ -1,0 +1,18 @@
+<button mat-button
+    [ngClass]="{
+      'loading': loading,
+      'disabled': disabled,
+      'outline': outline
+    }"
+    [disabled]="disabled"
+  >
+
+  <span *ngIf="!loading">{{ title }}</span>
+
+  <span *ngIf="loading" class="mat-spinner-content">
+
+    <mat-spinner strokeWidth="6" diameter="15"></mat-spinner>
+
+  </span>
+
+</button>

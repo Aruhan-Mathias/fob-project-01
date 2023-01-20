@@ -1,0 +1,129 @@
+<div class="dialog-candidates-container">
+
+  <section>
+
+    <h1>Novo Candidato</h1>
+
+  </section>
+
+  <mat-tab-group (selectedIndexChange)="selectedIndex" [(selectedIndex)]="selectedIndex" (fitInkBarToContent)="true">
+
+    <!-- Content 01 (Dados Pessoais) -->
+    <mat-tab [disabled]="candidateForm">
+
+      <ng-template mat-tab-label>
+        <!-- <mat-icon class="example-tab-icon">thumb_up</mat-icon> -->
+        Dados Pessoais *
+      </ng-template>
+
+      <app-form
+        formType="create"
+        (validForm)="formValid($event)"
+      >
+      </app-form>
+
+    </mat-tab>
+
+    <mat-tab
+      #tab02
+      updateActiveLink="event($event)"
+      [disabled]="!candidateForm"
+      >
+      <ng-template mat-tab-label>
+        <!-- <mat-icon class="example-tab-icon">thumb_up</mat-icon> -->
+        Foto de Perfil
+      </ng-template>
+
+      <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+      <div
+        class="drop-container"
+        id="drop-container"
+        (drop)="uploadFile($event, true)"
+        (dragenter)="dropzoneHovered = true" (dragleave)="dropzoneHovered = false"
+        [ngClass]="{'hover': dropzoneHovered}"
+        >
+
+        <div>
+
+          <p>Arraste a imagem de perfil</p>
+          <section class="or">
+            <span class="divisor"></span>
+            <span>ou</span>
+            <span class="divisor"></span>
+          </section>
+          <label for="input-file">Escolher Arquivo</label>
+          <input type="file" accept=".png, .jpeg, .jpg" name="selected_files" id="input-file" (change)="uploadFile($event, true)">
+
+        </div>
+
+      </div>
+
+      <div class="btn-content">
+
+        <app-shared-button
+          [title]="'Continuar'" (click)="selectedIndex = 2"
+          [outline]="true"
+        >
+        </app-shared-button>
+
+      </div>
+
+    </mat-tab>
+
+    <mat-tab
+      #tab02
+      updateActiveLink="event($event)"
+      [disabled]="!candidateForm"
+      >
+      <ng-template mat-tab-label>
+        <!-- <mat-icon class="example-tab-icon">thumb_up</mat-icon> -->
+        Galeria de Fotos
+      </ng-template>
+
+      <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+      <div
+        class="drop-container"
+        (drop)="uploadFile($event, false)"
+        (dragenter)="dropzoneHovered = true" (dragleave)="dropzoneHovered = false"
+        [ngClass]="{'hover': dropzoneHovered}"
+        >
+
+        <div>
+
+          <p>Arraste a imagem/vídeo (png, jpeg, jpg, mp4)</p>
+          <section class="or">
+            <span class="divisor"></span>
+            <span>ou</span>
+            <span class="divisor"></span>
+          </section>
+          <label for="input-file">Escolher Arquivo</label>
+          <input type="file" accept=".png, .jpeg, .jpg, .mp4" name="selected_files" id="input-file" (change)="uploadFile($event, false)">
+
+        </div>
+
+      </div>
+
+      <div class="btn-content galery">
+
+        <app-shared-button
+          [title]="'Voltar'"
+          [outline]="true"
+          (click)="selectedIndex = 1"
+        >
+        </app-shared-button>
+
+        <app-shared-button
+          [title]="'Finalizar Cadastro'"
+          (click)="closeDialog()"
+        >
+        </app-shared-button>
+
+      </div>
+
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>
